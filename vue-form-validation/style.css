@@ -1,0 +1,7 @@
+html, body { font-family: 'Comic Sans MS', sans-serif}
+.full-width { width: 100%; }
+.title { text-align: center; font-weight: 800; }
+.btn { margin: 20px; padding: 10px 20px; }
+.input-field, .btn-lg, h3, h1 { margin: 20px!important; padding: 20px 30px;}
+h3 { margin: 10px 0 !important; padding: 10px;}
+
