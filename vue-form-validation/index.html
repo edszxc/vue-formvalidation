@@ -10,6 +10,8 @@
         <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/bootstrap-3.3.7/dist/css/bootstrap.min.css">
         <!-- Custom Style -->
         <link href="style.css" rel="stylesheet">
+        <!-- Vue -->
+        <script src="vue.js"></script>
     </head>
     <body>
         <div id="app">
@@ -43,7 +45,9 @@
                                 <div v-if="show">
                                     <h3>Contact Information(s)</h3>
                                     <ul class="contactInfos">
-                                        <li v-for="contact in contactList">{{contact}}</li>
+                                        <li v-for="contact in contactList">
+                                            {{contact}} <button class="btn-dange remove" @click="remove(contact)"><i class="fa fa-times"></i></button>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div v-else>
@@ -56,13 +60,31 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <button :disabled="!isComplete" class="btn btn-lg btn-primary full-width">Register Details</button>
+                        <button @click="register" :disabled="!isComplete" class="btn btn-lg btn-primary full-width btn-block btn-outline">Register Details</button>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h1>Registered Persons</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12" v-for="person in persons">
+                                Name : "{{person.name}}"<br/>
+                                Nickname : "{{person.nickname}}"<br/> 
+                                Address : ""{{person.address}}"<br/>
+                                Contact List : "{{person.contactList}}"<br/>
+                                <hr/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- Vue -->
-    <script src="vue.js"></script>
     <script src="main.js"></script>
     </body>
 </html>

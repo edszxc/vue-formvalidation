@@ -7,7 +7,13 @@ var app = new Vue ({
         address: '',
         contactInfo: '',
         contactList:[],
-        show: true
+        show: true, 
+        persons: [{
+            name: 'Ed Lui',
+            nickname: 'Ed',
+            address: 'Sample',
+            contactList: '09051983533'
+        }]
     },
     methods: {
         addContact(){
@@ -16,6 +22,21 @@ var app = new Vue ({
         },
         clear(){
             this.contactInfo = ''
+        },
+        remove(contact){
+            this.contactList.splice(this.contactList.indexOf(contact), 1)
+        },
+        register(){
+            this.persons.push({
+                name: this.name,
+                nickname: this.nickname,
+                address: this.address,
+                contactList: this.contactList
+            })
+            this.name = ''
+            this.nickname = ''
+            this.address = ''
+            this.contactList = []
         }
     },
     computed: {
