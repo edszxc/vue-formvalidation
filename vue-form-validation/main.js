@@ -12,7 +12,7 @@ var app = new Vue ({
             name: 'Ed Lui',
             nickname: 'Ed',
             address: 'Sample',
-            contactList: '09051983533'
+            contactList: '["09051983533"]'
         }]
     },
     methods: {
